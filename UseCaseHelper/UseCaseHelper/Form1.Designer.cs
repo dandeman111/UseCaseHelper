@@ -37,9 +37,10 @@
             this.rbCreate = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbElementen.SuspendLayout();
             this.gbModes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbElementen
@@ -139,20 +140,22 @@
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // pictureBox1
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 178);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(654, 283);
-            this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 173);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(654, 288);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 473);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.gbModes);
@@ -163,6 +166,7 @@
             this.gbElementen.PerformLayout();
             this.gbModes.ResumeLayout(false);
             this.gbModes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,7 +182,7 @@
         private System.Windows.Forms.RadioButton rbCreate;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

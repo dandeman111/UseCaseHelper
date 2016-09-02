@@ -22,15 +22,10 @@ namespace UseCaseHelper
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            //poppetje tekenen
-            DrawPoppetje(0,0);
-
-        }
+       
         private void DrawPoppetje(int x, int y)
         {
-            Graphics g = panel1.CreateGraphics();
+            Graphics g = pictureBox1.CreateGraphics();
             Pen p = new Pen(Color.Black);
             p.Width = 2;
             
@@ -46,9 +41,32 @@ namespace UseCaseHelper
             g.DrawLine(p, p1, p5); // linker arm
             g.DrawLine(p, p1, p6); // rechter arm
 
-            g.DrawEllipse(p, 15 + x,10 + y, 30,30);
+            g.DrawEllipse(p, 15 + x,10 + y, 30,30); //hoofd tekenen
 
             
+        }
+
+
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (rbActor.Checked)// als de actor methode aan staat
+            {
+
+                MouseEventArgs me = (MouseEventArgs)e;
+
+                DrawPoppetje(me.X,me.Y);
+                Console.WriteLine(MousePosition.X);
+                Console.WriteLine(MousePosition.Y);
+
+
+
+            }
         }
     }
 }
