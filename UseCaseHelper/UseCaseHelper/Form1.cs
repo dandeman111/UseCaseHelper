@@ -43,28 +43,53 @@ namespace UseCaseHelper
 
             g.DrawEllipse(p, 15 + x,10 + y, 30,30); //hoofd tekenen
 
+
+            //naam invoeren
+
             
         }
-
+        
 
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
+        int klik = 0;
+        Point p1 = new Point();
+        Point p2 = new Point();
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
+            MouseEventArgs me = (MouseEventArgs)e;
+
             if (rbActor.Checked)// als de actor methode aan staat
             {
-
-                MouseEventArgs me = (MouseEventArgs)e;
-
                 DrawPoppetje(me.X,me.Y);
-                Console.WriteLine(MousePosition.X);
-                Console.WriteLine(MousePosition.Y);
+                
+            }
+           
 
+            if (rbLine.Checked) // lijn mode
+            {
+                
+                if (klik == 1)
+                {
 
+                    klik = 0;
+                    p2 = me.Location;
+                    Graphics g = pictureBox1.CreateGraphics();
+                    Pen p = new Pen(Color.Black);
+                    p.Width = 2;
+                    g.DrawLine(p, p1, p2);
+
+                } else if (klik == 0)
+                {
+                    p1 = me.Location;
+                    klik = 1;
+
+                }
+
+                
 
             }
         }
