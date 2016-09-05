@@ -18,7 +18,7 @@ namespace UseCaseHelper
         {
             Name = name;
             Width = 40;
-            Height = 130;
+            Height = 60;
             X = x;
             Y = y;
             

@@ -27,7 +27,7 @@ namespace UseCaseHelper
         }
 
        
-        private void DrawPoppetje(int x, int y)
+        private void DrawPoppetje(int x, int y, String naam)
         {
             
             Pen p = new Pen(Color.Black);
@@ -49,8 +49,9 @@ namespace UseCaseHelper
 
 
             //naam invoeren
+            g.DrawString(naam, DefaultFont, Brushes.Black, 10 + x, 100 + y);
 
-            
+
         }
         
 
@@ -68,9 +69,31 @@ namespace UseCaseHelper
 
             if (rbActor.Checked)// als de actor methode aan staat
             {
-               actors.Add( new Actor("bob" ,me.X, me.Y ));
-                DrawPoppetje(me.X,me.Y);
+                ActorName an = new ActorName();
+                Boolean gereed2 = true;
+                foreach (Actor a in actors)
+                {
+                    if (me.X > a.X && me.X < a.X + a.Width) // goede x as is geslecteerd
+                    {
+                        if (me.Y > a.Y && me.Y < a.Y + Height)
+                        {
+                            MessageBox.Show("er staat al een actor");
+                            gereed2 = false;
+                        }
+                    }
+                }
                 
+                    an.ShowDialog();
+                if (an.Gereed == true && gereed2 == true)
+                {
+                    actors.Add(new Actor(an.ActorNaam, me.X, me.Y));
+                    DrawPoppetje(me.X, me.Y, an.ActorNaam);
+                }
+                    
+                
+                
+
+
             }
            
 
@@ -102,7 +125,7 @@ namespace UseCaseHelper
                     {
                         if(me.Y > a.Y && me.Y < a.Y + Height)
                         {
-                            Console.WriteLine("er is een actor geselecteerd");
+                            Console.WriteLine(a.Name);
                         }
                     }
                 }
