@@ -12,9 +12,13 @@ namespace UseCaseHelper
 {
     public partial class Form1 : Form
     {
+        Graphics g;
+        List<Actor> actors;
         public Form1()
         {
             InitializeComponent();
+            g = pictureBox1.CreateGraphics();
+            actors = new List<Actor>();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -25,7 +29,7 @@ namespace UseCaseHelper
        
         private void DrawPoppetje(int x, int y)
         {
-            Graphics g = pictureBox1.CreateGraphics();
+            
             Pen p = new Pen(Color.Black);
             p.Width = 2;
             
@@ -64,6 +68,7 @@ namespace UseCaseHelper
 
             if (rbActor.Checked)// als de actor methode aan staat
             {
+               actors.Add( new Actor("bob" ,me.X, me.Y ));
                 DrawPoppetje(me.X,me.Y);
                 
             }
@@ -87,11 +92,32 @@ namespace UseCaseHelper
                     p1 = me.Location;
                     klik = 1;
 
+                }   
+            }
+            if(rbSelect.Checked)
+            {
+                foreach(Actor a in actors)
+                {
+                    if(me.X > a.X && me.X < a.X+ a.Width) // goede x as is geslecteerd
+                    {
+                        if(me.Y > a.Y && me.Y < a.Y + Height)
+                        {
+                            Console.WriteLine("er is een actor geselecteerd");
+                        }
+                    }
                 }
 
-                
-
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            g.Clear(Color.White);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
