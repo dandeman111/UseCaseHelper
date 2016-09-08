@@ -17,17 +17,17 @@ namespace UseCaseHelper
         public Form1()
         {
             InitializeComponent();
-            g = pictureBox1.CreateGraphics();
-            actors = new List<Actor>();
+            g = pictureBox1.CreateGraphics(); //maakt graphics
+            actors = new List<Actor>(); //maakt een lijst met actoren
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e) //random groupbox
         {
 
         }
 
        
-        private void DrawPoppetje(int x, int y, String naam)
+        private void DrawPoppetje(int x, int y, String naam) //functie om een poppetje te tekenen
         {
             
             Pen p = new Pen(Color.Black);
@@ -56,11 +56,11 @@ namespace UseCaseHelper
         
 
 
-        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        private void pictureBox1_Paint(object sender, PaintEventArgs e) //nutteloos event
         {
 
         }
-        int klik = 0;
+        int klik = 0; //variabelen voor muiskliks
         Point p1 = new Point();
         Point p2 = new Point();
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
@@ -69,25 +69,25 @@ namespace UseCaseHelper
 
             if (rbActor.Checked)// als de actor methode aan staat
             {
-                ActorName an = new ActorName();
-                Boolean gereed2 = true;
-                foreach (Actor a in actors)
+                ActorName an = new ActorName(); //maakt een form voor actor naam
+                Boolean gereed2 = true; //boolean voor locatie van actor
+                foreach (Actor a in actors) // gaat alle actors na
                 {
                     if (me.X > a.X && me.X < a.X + a.Width) // goede x as is geslecteerd
                     {
-                        if (me.Y > a.Y && me.Y < a.Y + a.Height)
+                        if (me.Y > a.Y && me.Y < a.Y + a.Height) // goede y as is geselecteerd
                         {
                             MessageBox.Show("er staat al een actor");
-                            gereed2 = false;
+                            gereed2 = false; // kan geen actor geplaats worden
                         }
                     }
                 }
                 
-                    an.ShowDialog();
-                if (an.Gereed == true && gereed2 == true)
+                    an.ShowDialog(); // opent het form
+                if (an.Gereed == true && gereed2 == true) //kijkt naar het variabel in het form om te kijken of hij geplaats kan worden
                 {
-                    actors.Add(new Actor(an.ActorNaam, me.X, me.Y));
-                    DrawPoppetje(me.X, me.Y, an.ActorNaam);
+                    actors.Add(new Actor(an.ActorNaam, me.X, me.Y)); // voegt een actor toe aan de lijst
+                    DrawPoppetje(me.X, me.Y, an.ActorNaam); // tekent de actor
                 }
                     
                 
@@ -97,7 +97,7 @@ namespace UseCaseHelper
             }
            
 
-            if (rbLine.Checked) // lijn mode
+            if (rbLine.Checked) // lijn mode, maar die gaat mischien weg
             {
                 
                 if (klik == 1)
@@ -117,7 +117,7 @@ namespace UseCaseHelper
 
                 }   
             }
-            if(rbSelect.Checked)
+            if(rbSelect.Checked) // select mode
             {
                 foreach(Actor a in actors)
                 {
@@ -133,10 +133,10 @@ namespace UseCaseHelper
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e) //clear knop
         {
-            actors.Clear();
-            g.Clear(Color.White);
+            actors.Clear(); // maakt de lijst van actors leeg
+            g.Clear(Color.White); // maakt het canvas leeg
         }
 
         private void Form1_Load(object sender, EventArgs e)
