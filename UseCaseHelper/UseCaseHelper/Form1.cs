@@ -75,7 +75,7 @@ namespace UseCaseHelper
                 {
                     if (me.X > a.X && me.X < a.X + a.Width) // goede x as is geslecteerd
                     {
-                        if (me.Y > a.Y && me.Y < a.Y + Height)
+                        if (me.Y > a.Y && me.Y < a.Y + a.Height)
                         {
                             MessageBox.Show("er staat al een actor");
                             gereed2 = false;
@@ -121,9 +121,9 @@ namespace UseCaseHelper
             {
                 foreach(Actor a in actors)
                 {
-                    if(me.X > a.X && me.X < a.X+ a.Width) // goede x as is geslecteerd
+                    if(me.X > a.X & me.X < a.X+ a.Width) // goede x as is geslecteerd
                     {
-                        if(me.Y > a.Y && me.Y < a.Y + Height)
+                        if(me.Y > a.Y & me.Y < a.Y + a.Height)
                         {
                             Console.WriteLine(a.Name);
                         }
@@ -135,6 +135,7 @@ namespace UseCaseHelper
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            actors.Clear();
             g.Clear(Color.White);
         }
 

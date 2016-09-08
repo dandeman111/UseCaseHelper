@@ -17,8 +17,8 @@ namespace UseCaseHelper
         public Actor(String name, int x, int y)
         {
             Name = name;
-            Width = 40;
-            Height = 60;
+            Width = 50;
+            Height = 110;
             X = x;
             Y = y;
             
