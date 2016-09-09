@@ -14,11 +14,13 @@ namespace UseCaseHelper
     {
         Graphics g;
         List<Actor> actors;
+        List<UseCase> useCases;
         public Form1()
         {
             InitializeComponent();
             g = pictureBox1.CreateGraphics(); //maakt graphics
             actors = new List<Actor>(); //maakt een lijst met actoren
+            useCases = new List<UseCase>();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e) //random groupbox
@@ -52,6 +54,14 @@ namespace UseCaseHelper
             g.DrawString(naam, DefaultFont, Brushes.Black, 10 + x, 100 + y);
 
 
+        }
+        private void DrawUsecase(int x, int y, String naam)
+        {
+            Pen p = new Pen(Color.Black);
+            p.Width = 2;
+            
+            g.DrawEllipse(p, 15 + x, 10 + y,  100, 30 );
+            g.DrawString(naam, DefaultFont, Brushes.Black, 27 + x , 17 + y);
         }
         
 
@@ -126,9 +136,19 @@ namespace UseCaseHelper
                         if(me.Y > a.Y & me.Y < a.Y + a.Height)
                         {
                             Console.WriteLine(a.Name);
+
                         }
                     }
                 }
+
+            }
+            if(rbUseCase.Checked)
+            {
+                bool gereed2 = true;
+                UseCaseForm uf = new UseCaseForm();
+                DrawUsecase(me.X,me.Y, "123490");
+                //uf.ShowDialog();
+
 
             }
         }
