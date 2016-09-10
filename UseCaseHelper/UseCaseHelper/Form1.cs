@@ -13,7 +13,7 @@ namespace UseCaseHelper
     public partial class Form1 : Form
     {
         Graphics g;
-        List<Actor> actors;
+        public List<Actor> actors;
         List<UseCase> useCases;
         public Form1()
         {
@@ -142,12 +142,20 @@ namespace UseCaseHelper
                 }
 
             }
-            if(rbUseCase.Checked)
+            if(rbUseCase.Checked) // use case mode
             {
                 bool gereed2 = true;
-                UseCaseForm uf = new UseCaseForm();
-                DrawUsecase(me.X,me.Y, "123490");
-                //uf.ShowDialog();
+                UseCaseForm uf = new UseCaseForm(actors);
+                
+                uf.ShowDialog();
+
+              /*  if(gereed2 == true&& uf.gereed 1 == true)
+                {
+                    DrawUsecase(me.X, me.Y, "123490");
+                    useCases.Add(new UseCase())
+                }*/
+
+                
 
 
             }

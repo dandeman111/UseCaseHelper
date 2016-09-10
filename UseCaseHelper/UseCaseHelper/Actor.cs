@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace UseCaseHelper
 {
-    class Actor
+    public class Actor
     {
         public String Name { get; set; }
         public int Width { get; }
         public int Height { get; }
         public int X { get; }
         public int Y { get; }
+        public override string ToString() { return Name; }
 
         public Actor(String name, int x, int y)
         {
