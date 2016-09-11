@@ -55,13 +55,28 @@ namespace UseCaseHelper
 
 
         }
-        private void DrawUsecase(int x, int y, String naam)
+        private void DrawUsecase(int x, int y, String naam , List<Actor> actors)
         {
             Pen p = new Pen(Color.Black);
             p.Width = 2;
+            Point p1 = new Point(x +20 , y+25);
             
             g.DrawEllipse(p, 15 + x, 10 + y,  100, 30 );
             g.DrawString(naam, DefaultFont, Brushes.Black, 27 + x , 17 + y);
+            Point p2 = new Point();
+
+         foreach(Actor a in actors)
+            {
+                Console.WriteLine(a.Name);
+                p2.X = a.X + 50;
+                p2.Y = a.Y + 55;
+                g.DrawLine(p, p1, p2);
+            }
+
+            
+
+
+
         }
         
 
@@ -148,12 +163,13 @@ namespace UseCaseHelper
                 UseCaseForm uf = new UseCaseForm(actors);
                 
                 uf.ShowDialog();
-
-              /*  if(gereed2 == true&& uf.gereed 1 == true)
+            
+                if(gereed2 == true&& uf.gereed1 == true)
                 {
-                    DrawUsecase(me.X, me.Y, "123490");
-                    useCases.Add(new UseCase())
-                }*/
+                    
+                    useCases.Add(new UseCase(uf.Naam, uf.Samenvatting, uf.selectedActors, uf.Omschrijving, uf.Uitzondering, uf.Resultaat, me.X, me.Y));
+                    DrawUsecase(me.X, me.Y, uf.Naam,uf.selectedActors);
+                }
 
                 
 

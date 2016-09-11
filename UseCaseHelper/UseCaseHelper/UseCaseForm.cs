@@ -20,7 +20,8 @@ namespace UseCaseHelper
         public String Uitzondering { get; set; }
         public String Resultaat { get; set; }
         public List<Actor> Actors { get; set; }
-        List<Actor> selectedActors{ get; set; }
+        public List<Actor> selectedActors{ get; set; }
+        public bool gereed1 { get; set; }
 
         public UseCaseForm( List<Actor> actors)
         {
@@ -29,14 +30,15 @@ namespace UseCaseHelper
             {
                 clbActors.Items.Add(a.Name);
             }
+            selectedActors = new List<Actor>();
             Actors = new List<Actor>();
             Actors.AddRange(actors);
-            
+            gereed1 = false;
         }
 
         private void btnKlaar_Click(object sender, EventArgs e)
         {
-            if (tbNaam != null && tbAanname != null && tbOmschrijving != null && tbResultaat != null && tbSamenvatting != null && tbUItzondering != null) // kijkt of alles is ingevuld
+            if (tbNaam.Text != null && tbAanname.Text != "" && tbOmschrijving.Text != "" && tbResultaat.Text != "" && tbSamenvatting.Text != "" && tbUItzondering.Text != "") // kijkt of alles is ingevuld
             {
                 Naam = tbNaam.Text;
                 Samenvatting = tbSamenvatting.Text;
@@ -47,21 +49,39 @@ namespace UseCaseHelper
 
                 for (int c = 0; c < clbActors.Items.Count; c++) // loopt door alle checked list box entries
                 {
-                    if (clbActors.GetItemChecked(c)) //kijkt of het item in de loop is gechecked
+                    foreach(Actor a in Actors)
+                    {
+                        if(clbActors.Items[c].ToString() == a.Name)
+                        {
+                            selectedActors.Add(a);
+                        }
+                    }
+
+
+                    /*if (clbActors.GetItemChecked(c)) //kijkt of het item in de loop is gechecked
                     {
                         foreach (Actor a in Actors) // loopt door alle actors
                         {
-                            if (a.Name == clbActors.GetItemChecked(c).ToString()) // als de naam gelijk is wordt de actor toegevoegd
+                            for(int f =0; c< clbActors.SelectedItems.Count; c++)
                             {
-                                selectedActors.Add(a); // voegt hem toe
+                                if(a.Name == clbActors.Items[f].ToString())
+                                {
+                                    if (a != null)
+                                    {
+                                        selectedActors.Add(a); // voegt hem toe
+                                    }
+                                }
                             }
+                            
                         }
-                    }
+                    }*/
                 }
+                gereed1 = true;
+                this.Hide();
             }
             else { MessageBox.Show("Vul alle velden in"); }
 
-
+            
 
 
 
