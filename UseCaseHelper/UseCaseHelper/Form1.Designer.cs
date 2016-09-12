@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gbModes = new System.Windows.Forms.GroupBox();
             this.rbSelect = new System.Windows.Forms.RadioButton();
-            this.rbCreate = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -42,19 +40,10 @@
             this.gbElementen.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gbModes
-            // 
-            this.gbModes.Location = new System.Drawing.Point(221, 12);
-            this.gbModes.Name = "gbModes";
-            this.gbModes.Size = new System.Drawing.Size(171, 134);
-            this.gbModes.TabIndex = 1;
-            this.gbModes.TabStop = false;
-            this.gbModes.Text = "Modes";
-            // 
             // rbSelect
             // 
             this.rbSelect.AutoSize = true;
-            this.rbSelect.Location = new System.Drawing.Point(6, 134);
+            this.rbSelect.Location = new System.Drawing.Point(7, 109);
             this.rbSelect.Name = "rbSelect";
             this.rbSelect.Size = new System.Drawing.Size(68, 21);
             this.rbSelect.TabIndex = 1;
@@ -62,20 +51,9 @@
             this.rbSelect.Text = "Select";
             this.rbSelect.UseVisualStyleBackColor = true;
             // 
-            // rbCreate
-            // 
-            this.rbCreate.AutoSize = true;
-            this.rbCreate.Location = new System.Drawing.Point(7, 109);
-            this.rbCreate.Name = "rbCreate";
-            this.rbCreate.Size = new System.Drawing.Size(71, 21);
-            this.rbCreate.TabIndex = 0;
-            this.rbCreate.TabStop = true;
-            this.rbCreate.Text = "Create";
-            this.rbCreate.UseVisualStyleBackColor = true;
-            // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(475, 29);
+            this.btnClear.Location = new System.Drawing.Point(227, 12);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(89, 33);
             this.btnClear.TabIndex = 0;
@@ -85,7 +63,7 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(475, 111);
+            this.btnRemove.Location = new System.Drawing.Point(227, 118);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(89, 35);
             this.btnRemove.TabIndex = 2;
@@ -97,7 +75,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Location = new System.Drawing.Point(12, 195);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(922, 349);
+            this.pictureBox1.Size = new System.Drawing.Size(1326, 691);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
@@ -128,7 +106,7 @@
             // rbLine
             // 
             this.rbLine.AutoSize = true;
-            this.rbLine.Location = new System.Drawing.Point(6, 82);
+            this.rbLine.Location = new System.Drawing.Point(7, 82);
             this.rbLine.Name = "rbLine";
             this.rbLine.Size = new System.Drawing.Size(56, 21);
             this.rbLine.TabIndex = 2;
@@ -140,12 +118,11 @@
             // 
             this.gbElementen.Controls.Add(this.rbSelect);
             this.gbElementen.Controls.Add(this.rbLine);
-            this.gbElementen.Controls.Add(this.rbCreate);
             this.gbElementen.Controls.Add(this.rbUseCase);
             this.gbElementen.Controls.Add(this.rbActor);
             this.gbElementen.Location = new System.Drawing.Point(24, 12);
             this.gbElementen.Name = "gbElementen";
-            this.gbElementen.Size = new System.Drawing.Size(174, 177);
+            this.gbElementen.Size = new System.Drawing.Size(174, 141);
             this.gbElementen.TabIndex = 0;
             this.gbElementen.TabStop = false;
             this.gbElementen.Text = "Elementen";
@@ -155,11 +132,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 556);
+            this.ClientSize = new System.Drawing.Size(1350, 898);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.gbModes);
             this.Controls.Add(this.gbElementen);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -172,9 +148,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox gbModes;
         private System.Windows.Forms.RadioButton rbSelect;
-        private System.Windows.Forms.RadioButton rbCreate;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -55,29 +55,48 @@ namespace UseCaseHelper
 
 
         }
-        private void DrawUsecase(int x, int y, String naam , List<Actor> actors)
+        private void DrawUsecase(int x, int y, String naam, List<Actor> actors)
         {
             Pen p = new Pen(Color.Black);
             p.Width = 2;
-            Point p1 = new Point(x +20 , y+25);
-            
-            g.DrawEllipse(p, 15 + x, 10 + y,  100, 30 );
-            g.DrawString(naam, DefaultFont, Brushes.Black, 27 + x , 17 + y);
+            Point p1 = new Point(x + 20, y + 25);
+
+            g.DrawEllipse(p, 15 + x, 10 + y, 100, 30);
+            g.DrawString(naam, DefaultFont, Brushes.Black, 27 + x, 17 + y);
             Point p2 = new Point();
 
-         foreach(Actor a in actors)
+            foreach (Actor a in actors)
             {
                 Console.WriteLine(a.Name);
                 p2.X = a.X + 50;
                 p2.Y = a.Y + 55;
                 g.DrawLine(p, p1, p2);
             }
+        }
+        
+         private void HerDrawUsecase(UseCase uc)
+        {
+            Pen p = new Pen(Color.White);
+            p.Width = 2;
+            Point p1 = new Point(uc.X + 20, uc.Y + 25);
 
+            g.DrawEllipse(p, 15 + uc.X, 10 + uc.Y, 100, 30);
+            g.DrawString(uc.Naam, DefaultFont, Brushes.White, 27 + uc.X, 17 + uc.Y);
+            Point p2 = new Point();
+
+            foreach (Actor a in uc.Actors)
+            {
+                Console.WriteLine(a.Name);
+                p2.X = a.X + 50;
+                p2.Y = a.Y + 55;
+                g.DrawLine(p, p1, p2);
+            }
+        }
             
 
 
 
-        }
+        
         
 
 
@@ -152,6 +171,22 @@ namespace UseCaseHelper
                         {
                             Console.WriteLine(a.Name);
 
+                        }
+                    }
+                }
+                foreach(UseCase uc in useCases)
+                {
+                    if(me.X > uc.X & me.X < uc.X + uc.Width) // de x as is geselecteerd
+                    {
+                        if (me.Y > uc.Y & me.Y < uc.Y + uc.Height) //de y as is geselecteerd
+                        {
+                            UseCaseForm uf = new UseCaseForm(actors,uc);
+                            HerDrawUsecase(uc);
+                            uf.ShowDialog();
+                            uc.vervang(uf.UsecaseInForm);
+                            DrawUsecase(uc.X,uc.Y,uc.Naam,uc.Actors);
+
+                            
                         }
                     }
                 }

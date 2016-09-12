@@ -29,11 +29,33 @@ namespace UseCaseHelper
             Actors.AddRange(actors);
             gereed1 = false;
         }
+        public UseCaseForm(List<Actor> actors, UseCase uc)
+        {
+            InitializeComponent();
+            Actors = new List<Actor>();
+            Actors.AddRange(actors);
+            foreach (Actor a in Actors) //zet alle actors in de checkedlistbox
+            {
+                clbActors.Items.Add(a);
+            }
+            UsecaseInForm = new UseCase(uc);
+            tbNaam.Text = UsecaseInForm.Naam;
+            tbSamenvatting.Text = UsecaseInForm.Samenvatting;
+            tbAanname.Text = UsecaseInForm.Aanname;
+            tbOmschrijving.Text = UsecaseInForm.Beschrijving;
+            tbResultaat.Text = UsecaseInForm.Resultaat;
+            tbUItzondering.Text = UsecaseInForm.Uitzondering;
+            tbResultaat.Text = UsecaseInForm.Resultaat;
+            gereed1 = false;
+
+        }
 
         private void btnKlaar_Click(object sender, EventArgs e)
         {
+
             if (tbNaam.Text != null && tbAanname.Text != "" && tbOmschrijving.Text != "" && tbResultaat.Text != "" && tbSamenvatting.Text != "" && tbUItzondering.Text != "") // kijkt of alles is ingevuld
             {
+                
                 UsecaseInForm.Naam = tbNaam.Text;
                 UsecaseInForm.Samenvatting = tbSamenvatting.Text;
                 UsecaseInForm.Aanname = tbAanname.Text;
@@ -42,13 +64,13 @@ namespace UseCaseHelper
                 UsecaseInForm.Uitzondering = tbUItzondering.Text;
                 UsecaseInForm.Actors = new List<Actor>();
                 
-                foreach(String s in clbActors.CheckedItems)
+                foreach(object s in clbActors.CheckedItems)
                 {
                     foreach(Actor a in Actors)
                     {
-                        if(s == a.Name)
+                        if(s.ToString() == a.Name)
                         {
-                            UsecaseInForm.Actors.Add(a);//actor in uscasein form is leeg
+                            UsecaseInForm.Actors.Add(a);
                         }
                     }
                 }

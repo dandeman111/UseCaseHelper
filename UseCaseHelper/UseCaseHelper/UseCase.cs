@@ -34,9 +34,35 @@ namespace UseCaseHelper
             Width = 100;
             Height = 100;
         }
+        public UseCase(UseCase u)
+        {
+            Naam = u.Naam;
+            Samenvatting = u.Samenvatting;
+            Aanname = u.Aanname;
+            Actors = u.Actors;
+            Beschrijving = u.Beschrijving;
+            Uitzondering = u.Uitzondering;
+            Resultaat = u.Resultaat;
+            X = u.X;
+            Y = u.Y;
+            Width = 100;
+            Height = 100;
+        }
         public UseCase()
         {
-                
+
+        }
+        public void vervang(UseCase uc)
+        {
+            Naam = uc.Naam;
+            Samenvatting = uc.Samenvatting;
+            Aanname = uc.Aanname;
+            Actors = uc.Actors;
+            Beschrijving = uc.Beschrijving;
+            Uitzondering = uc.Uitzondering;
+            Resultaat = uc.Resultaat;
+            
+
         }
     }
 }

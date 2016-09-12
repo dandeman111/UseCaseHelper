@@ -66,7 +66,7 @@
             // lblActor
             // 
             this.lblActor.AutoSize = true;
-            this.lblActor.Location = new System.Drawing.Point(31, 147);
+            this.lblActor.Location = new System.Drawing.Point(31, 190);
             this.lblActor.Name = "lblActor";
             this.lblActor.Size = new System.Drawing.Size(49, 17);
             this.lblActor.TabIndex = 2;
@@ -75,7 +75,7 @@
             // lblAanname
             // 
             this.lblAanname.AutoSize = true;
-            this.lblAanname.Location = new System.Drawing.Point(31, 296);
+            this.lblAanname.Location = new System.Drawing.Point(31, 333);
             this.lblAanname.Name = "lblAanname";
             this.lblAanname.Size = new System.Drawing.Size(76, 17);
             this.lblAanname.TabIndex = 3;
@@ -84,7 +84,7 @@
             // lblOmschrijving
             // 
             this.lblOmschrijving.AutoSize = true;
-            this.lblOmschrijving.Location = new System.Drawing.Point(30, 360);
+            this.lblOmschrijving.Location = new System.Drawing.Point(29, 392);
             this.lblOmschrijving.Name = "lblOmschrijving";
             this.lblOmschrijving.Size = new System.Drawing.Size(97, 17);
             this.lblOmschrijving.TabIndex = 4;
@@ -93,7 +93,7 @@
             // lblUitzondering
             // 
             this.lblUitzondering.AutoSize = true;
-            this.lblUitzondering.Location = new System.Drawing.Point(30, 419);
+            this.lblUitzondering.Location = new System.Drawing.Point(30, 481);
             this.lblUitzondering.Name = "lblUitzondering";
             this.lblUitzondering.Size = new System.Drawing.Size(96, 17);
             this.lblUitzondering.TabIndex = 5;
@@ -102,7 +102,7 @@
             // lblResultaat
             // 
             this.lblResultaat.AutoSize = true;
-            this.lblResultaat.Location = new System.Drawing.Point(31, 484);
+            this.lblResultaat.Location = new System.Drawing.Point(27, 601);
             this.lblResultaat.Name = "lblResultaat";
             this.lblResultaat.Size = new System.Drawing.Size(80, 17);
             this.lblResultaat.TabIndex = 6;
@@ -120,12 +120,12 @@
             this.tbSamenvatting.Location = new System.Drawing.Point(143, 80);
             this.tbSamenvatting.Multiline = true;
             this.tbSamenvatting.Name = "tbSamenvatting";
-            this.tbSamenvatting.Size = new System.Drawing.Size(348, 44);
+            this.tbSamenvatting.Size = new System.Drawing.Size(348, 84);
             this.tbSamenvatting.TabIndex = 8;
             // 
             // tbAanname
             // 
-            this.tbAanname.Location = new System.Drawing.Point(143, 296);
+            this.tbAanname.Location = new System.Drawing.Point(143, 333);
             this.tbAanname.Multiline = true;
             this.tbAanname.Name = "tbAanname";
             this.tbAanname.Size = new System.Drawing.Size(348, 44);
@@ -133,31 +133,31 @@
             // 
             // tbOmschrijving
             // 
-            this.tbOmschrijving.Location = new System.Drawing.Point(143, 357);
+            this.tbOmschrijving.Location = new System.Drawing.Point(143, 392);
             this.tbOmschrijving.Multiline = true;
             this.tbOmschrijving.Name = "tbOmschrijving";
-            this.tbOmschrijving.Size = new System.Drawing.Size(348, 44);
+            this.tbOmschrijving.Size = new System.Drawing.Size(348, 67);
             this.tbOmschrijving.TabIndex = 11;
             // 
             // tbUItzondering
             // 
-            this.tbUItzondering.Location = new System.Drawing.Point(143, 416);
+            this.tbUItzondering.Location = new System.Drawing.Point(143, 481);
             this.tbUItzondering.Multiline = true;
             this.tbUItzondering.Name = "tbUItzondering";
-            this.tbUItzondering.Size = new System.Drawing.Size(348, 44);
+            this.tbUItzondering.Size = new System.Drawing.Size(348, 94);
             this.tbUItzondering.TabIndex = 12;
             // 
             // tbResultaat
             // 
-            this.tbResultaat.Location = new System.Drawing.Point(143, 484);
+            this.tbResultaat.Location = new System.Drawing.Point(143, 601);
             this.tbResultaat.Multiline = true;
             this.tbResultaat.Name = "tbResultaat";
-            this.tbResultaat.Size = new System.Drawing.Size(348, 44);
+            this.tbResultaat.Size = new System.Drawing.Size(348, 95);
             this.tbResultaat.TabIndex = 13;
             // 
             // btnKlaar
             // 
-            this.btnKlaar.Location = new System.Drawing.Point(246, 550);
+            this.btnKlaar.Location = new System.Drawing.Point(247, 702);
             this.btnKlaar.Name = "btnKlaar";
             this.btnKlaar.Size = new System.Drawing.Size(120, 32);
             this.btnKlaar.TabIndex = 14;
@@ -168,7 +168,7 @@
             // clbActors
             // 
             this.clbActors.FormattingEnabled = true;
-            this.clbActors.Location = new System.Drawing.Point(143, 147);
+            this.clbActors.Location = new System.Drawing.Point(143, 190);
             this.clbActors.Name = "clbActors";
             this.clbActors.Size = new System.Drawing.Size(348, 123);
             this.clbActors.TabIndex = 15;
