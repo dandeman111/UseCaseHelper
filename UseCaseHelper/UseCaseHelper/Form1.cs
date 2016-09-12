@@ -167,13 +167,9 @@ namespace UseCaseHelper
                 if(gereed2 == true&& uf.gereed1 == true)
                 {
                     
-                    useCases.Add(new UseCase(uf.Naam, uf.Samenvatting, uf.selectedActors, uf.Omschrijving, uf.Uitzondering, uf.Resultaat, me.X, me.Y));
-                    DrawUsecase(me.X, me.Y, uf.Naam,uf.selectedActors);
+                    useCases.Add(new UseCase(uf.UsecaseInForm.Naam,uf.UsecaseInForm.Aanname,uf.UsecaseInForm.Samenvatting,uf.UsecaseInForm.Actors,uf.UsecaseInForm.Beschrijving,uf.UsecaseInForm.Uitzondering,uf.UsecaseInForm.Resultaat,me.X,me.Y));
+                    DrawUsecase(me.X, me.Y, uf.UsecaseInForm.Naam,uf.UsecaseInForm.Actors);
                 }
-
-                
-
-
             }
         }
 

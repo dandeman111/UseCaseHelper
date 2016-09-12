@@ -12,13 +12,7 @@ namespace UseCaseHelper
 {
     public partial class UseCaseForm : Form
     {
-        public String Naam { get; set; }
-        public String Samenvatting { get; set; }
-        private List<Actor> UsecaseActors { get; set; }
-        public String Aanname { get; set; }
-        public String Omschrijving { get; set; }
-        public String Uitzondering { get; set; }
-        public String Resultaat { get; set; }
+        public UseCase UsecaseInForm { get; set; }
         public List<Actor> Actors { get; set; }
         public List<Actor> selectedActors{ get; set; }
         public bool gereed1 { get; set; }
@@ -30,7 +24,7 @@ namespace UseCaseHelper
             {
                 clbActors.Items.Add(a.Name);
             }
-            selectedActors = new List<Actor>();
+            UsecaseInForm = new UseCase();
             Actors = new List<Actor>();
             Actors.AddRange(actors);
             gereed1 = false;
@@ -40,19 +34,21 @@ namespace UseCaseHelper
         {
             if (tbNaam.Text != null && tbAanname.Text != "" && tbOmschrijving.Text != "" && tbResultaat.Text != "" && tbSamenvatting.Text != "" && tbUItzondering.Text != "") // kijkt of alles is ingevuld
             {
-                Naam = tbNaam.Text;
-                Samenvatting = tbSamenvatting.Text;
-                Aanname = tbAanname.Text;
-                Omschrijving = tbOmschrijving.Text;
-                Resultaat = tbResultaat.Text;
-                Uitzondering = tbUItzondering.Text; 
+                UsecaseInForm.Naam = tbNaam.Text;
+                UsecaseInForm.Samenvatting = tbSamenvatting.Text;
+                UsecaseInForm.Aanname = tbAanname.Text;
+                UsecaseInForm.Beschrijving = tbOmschrijving.Text;
+                UsecaseInForm.Resultaat = tbResultaat.Text;
+                UsecaseInForm.Uitzondering = tbUItzondering.Text;
+                UsecaseInForm.Actors = new List<Actor>();
+                
                 foreach(String s in clbActors.CheckedItems)
                 {
                     foreach(Actor a in Actors)
                     {
                         if(s == a.Name)
                         {
-                            selectedActors.Add(a);
+                            UsecaseInForm.Actors.Add(a);//actor in uscasein form is leeg
                         }
                     }
                 }
