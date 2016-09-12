@@ -45,36 +45,16 @@ namespace UseCaseHelper
                 Aanname = tbAanname.Text;
                 Omschrijving = tbOmschrijving.Text;
                 Resultaat = tbResultaat.Text;
-                Uitzondering = tbUItzondering.Text;
-
-                for (int c = 0; c < clbActors.Items.Count; c++) // loopt door alle checked list box entries
+                Uitzondering = tbUItzondering.Text; 
+                foreach(String s in clbActors.CheckedItems)
                 {
                     foreach(Actor a in Actors)
                     {
-                        if(clbActors.Items[c].ToString() == a.Name)
+                        if(s == a.Name)
                         {
                             selectedActors.Add(a);
                         }
                     }
-
-
-                    /*if (clbActors.GetItemChecked(c)) //kijkt of het item in de loop is gechecked
-                    {
-                        foreach (Actor a in Actors) // loopt door alle actors
-                        {
-                            for(int f =0; c< clbActors.SelectedItems.Count; c++)
-                            {
-                                if(a.Name == clbActors.Items[f].ToString())
-                                {
-                                    if (a != null)
-                                    {
-                                        selectedActors.Add(a); // voegt hem toe
-                                    }
-                                }
-                            }
-                            
-                        }
-                    }*/
                 }
                 gereed1 = true;
                 this.Hide();
